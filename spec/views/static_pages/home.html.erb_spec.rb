@@ -1,5 +1,9 @@
 require 'spec_helper'
 
-describe "static_pages/home.html.erb" do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "home page" do
+  subject { page }
+
+  before { visit root_path }
+
+  it { should have_content('Welcome') }
 end
