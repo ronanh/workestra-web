@@ -30,6 +30,9 @@ gem 'simple_form'
 
 # pagination
 gem 'kaminari'
+gem 'kaminari-bootstrap'
+
+gem 'devise'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
