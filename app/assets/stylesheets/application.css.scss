@@ -12,3 +12,26 @@
  *= require_tree .
  */
 @import "bootstrap";
+
+body {
+  padding-top: 160px;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
