@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-WorkestraWeb::Application.config.secret_key_base = '31acd95f069e36b4774300b6495218fd4189da734af320aba4dd505baff4a405401c8758dad14aa784f8aeb9bc3021db5f820719580d53952603b6e4136766a1'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+WorkestraWeb::Application.config.secret_key_base = secure_token
